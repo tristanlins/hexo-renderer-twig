@@ -1,7 +1,7 @@
 {
   "name": "hexo-renderer-twig",
   "description": "Twig renderer plugin for Hexo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index",
   "repository": "tristanlins/hexo-renderer-twig",
   "keywords": [

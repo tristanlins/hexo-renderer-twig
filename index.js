@@ -43,7 +43,13 @@ twigRenderer.compile = twigCompile;
     if (config.functions) {
         config.functions.forEach(function(name) {
             var fn = global[name];
-            Twig.extendFunction(name, fn);
+            Twig.extendFunction(name, function() {
+              if (global[name]) {
+                return global[name].apply(this, arguments);
+              } else {
+                throw new Error("Missing function " + name);
+              }
+            });
         });
     }
 })(hexo.config.twig || {});
